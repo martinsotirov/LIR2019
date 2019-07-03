@@ -28,18 +28,14 @@
 
 <script>
 import moment from 'moment'
-import timetable from '@/assets/program.csv'
+import program from '@/assets/program.csv'
 import stages from '@/assets/stages.json'
 
 export default {
   name: 'Home',
   data () {
     return {
-      timetable: timetable.map(set => {
-        set.selected = false
-        set.disabled = false
-        return set
-      }),
+      timetable: this.loadTimetable(program),
       stages,
       days: [
         { name: 'Thursday', stages },
@@ -76,8 +72,24 @@ export default {
           }
         }
       })
+
+      this.saveTimetable()
     },
-    selectedStyle(set) {
+    saveTimetable () {
+      localStorage.setItem('timetable', JSON.stringify(this.timetable))
+    },
+    loadTimetable (program) {
+      let timetable = JSON.parse(localStorage.getItem('timetable'))
+      if (typeof timetable === 'undefined' || timetable === null || timetable.length === 0) {
+        timetable = program.map(set => {
+          set.selected = false
+          set.disabled = false
+          return set
+        })
+      }
+      return timetable
+    },
+    selectedStyle (set) {
       let color = 'white'
       if (set.disabled) {
         color = 'gray'
