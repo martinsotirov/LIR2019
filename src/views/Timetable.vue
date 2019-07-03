@@ -7,7 +7,7 @@
       <h2>Day {{ i + 1 }}</h2>
       <div v-for="(stage, id) in day.stages" :key="`${day}-${id}`">
         <div v-if="setsForDayAndStage(i + 1, id).length > 0" :class="`stage stage-${id}`">
-          <h3>Stage <strong>{{ stage.name }}</strong></h3>
+          <h3>{{ stage.name }}</h3>
 
           <table>
             <tr
