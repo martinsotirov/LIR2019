@@ -1,0 +1,9 @@
+{
+  "mothership": { "name": "Mothership", "color": "red" },
+  "temple": { "name": "Temple", "color": "orange" },
+  "shredder": { "name": "Shredder", "color": "black" },
+  "freedom": { "name": "Freedom Music Stage", "color": "purple" },
+  "eve": { "name": "Eve's Garden", "color": "green" },
+  "portal": { "name": "Portal", "color": "blue" },
+  "storm": { "name": "Storm Stage", "color": "yellow" }
+}
