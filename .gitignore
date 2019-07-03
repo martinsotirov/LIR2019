@@ -1,3 +1,6 @@
+### Vue
+dist
+
 ### macOS ###
 # General
 .DS_Store
@@ -133,6 +136,8 @@ Sessionx.vim
 *~
 # Auto-generated tag files
 tags
+tags.lock
+tags.temp
 # Persistent undo
 [._]*.un~
 
